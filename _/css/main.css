@@ -94,7 +94,6 @@ textarea {
    ========================================================================== */
 
 body {
-    display: none;
     margin: 0;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.1);
@@ -117,7 +116,6 @@ h2 {
 
     h2 {
         font-size: 3em;
-        margin-bottom: 2%;
     }
 
 #wrapper {
@@ -140,6 +138,8 @@ h2 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.hide-switch {display: none !important;}
+
 section textarea, 
 section input,
 section button { 
@@ -157,23 +157,31 @@ section button {
     background-color: rgba(0, 0, 0, 0.2);
     border: none;
 }
+section button.proceed-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2%;
+}
+section button.dummy-btn {color: #333;}
 
 section p {
     padding: 0;
     margin: 0;
 }
 
-ul.list {
+ul.list
+ul.pick-list {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-    ul.list li {
+    ul.list li,
+    ul.pick-list li {
         display: inline-block;
         padding: 1%;
         margin: 1%;
         background-color: rgba(0, 0, 0, 0.2);
+        cursor: crosshair;
     }
 
 
