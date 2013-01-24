@@ -9,12 +9,12 @@ _Simple lottery system_
 
 *You can press "Fill with dummy data (for testing)" for testing*
 
-##Output (Is this everyone?)
+###Output (Is this everyone?)
  * you will be presented with all the items
  * you can delete entry by clicking on it
  * when you are done - press "Everybody? OK, lets do this!"
 
-##Lottery (Pick me, pick me, pick me!)
+###Lottery (Pick me, pick me, pick me!)
  * just wait for items to fill up
  * press - *Pick!*
 
