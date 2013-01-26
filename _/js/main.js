@@ -143,6 +143,9 @@ var help = {
             } else {
                 window.clearInterval(timer);
                 $("#result .pick-list li[data-id='"+pick_array[i]+"']").css('background-color', 'rgba(200, 0, 0, 0.8)');
+                setTimeout(function() {
+                    $("#result button.reload-btn").show();
+                }, 500);
             }
             
         },200);
@@ -221,7 +224,13 @@ $(document).ready(function() {
         $("#input .comma-text").val($("#dummy").text());
     });
 
+    $("button.reload-btn").click(function() {
+        location.reload();
+    });
+
     $("#output button.proceed-btn").click(function() {
+        // So user can't submit twice
+        $(this).hide();
         //$("#input .content, #output .content").slideUp();
         $("#result .content").css('min-height', '500px');
         $("#result .content").slideDown();
