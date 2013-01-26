@@ -183,7 +183,9 @@ $(document).ready(function() {
         var tmp_array = [];
         tmp_array = parse.commaSeparated();
         for (var i = 0; i < tmp_array.length; i++) {
-            database.push(tmp_array[i]);
+            if(tmp_array[i] != "") {
+                database.push(tmp_array[i]);
+            }
         }
 
         // Better safe than sorry
@@ -199,7 +201,9 @@ $(document).ready(function() {
         var tmp_array = [];
         tmp_array = parse.extra_add();
         for (var i = 0; i < tmp_array.length; i++) {
-            database.push(tmp_array[i]);
+            if(tmp_array[i] != "") {
+                database.push(tmp_array[i]);
+            }
         }
 
         // Better safe than sorry
