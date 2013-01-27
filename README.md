@@ -20,5 +20,4 @@ _Simple lottery system_
 
 ##Todo
  * Code review (I was in the hurry :) )
- * Find duplicates
- * Resolve bug (like, double picking)
+ * (done)Find duplicates
