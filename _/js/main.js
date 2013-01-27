@@ -51,9 +51,15 @@ var build = {
         // Clear list
         $("#output .list li").remove();
 
+        // Check for duplicates
+        var duplicates = help.duplicates(database);
         // Build list
         for (var i = 0; i < database.length; i++) {
             $("#output .list").append('<li data-id="'+i+'" data-name="'+database[i]+'">'+database[i]+'</li>');
+
+            if(duplicates.indexOf(database[i]) != -1) {
+                $("#output .list li[data-id='"+i+"']").css('background-color', 'rgba(200, 0, 0, 0.4)').addClass("duplicate");
+            }
         }
 
         // Set counter
@@ -74,7 +80,11 @@ var build = {
 
         $("#output .list li").on(
         "mouseleave", function() {
-            $(this).css('background-color', 'rgba(0, 0, 0, 0.2)');
+            if($(this).hasClass('duplicate')) {
+                $(this).css('background-color', 'rgba(200, 0, 0, 0.4)');
+            } else {
+                $(this).css('background-color', 'rgba(0, 0, 0, 0.2)');
+            }
         });
 
         // Click - delete
@@ -149,6 +159,18 @@ var help = {
             }
             
         },200);
+    },
+
+    duplicates: function(database) {
+        var srt_database = database.sort(); 
+        var duplicates = [];
+        for (var i = 0; i < srt_database.length - 1; i++) {
+            if (srt_database[i + 1] == srt_database[i]) {
+                duplicates.push(srt_database[i]);
+            }
+        }
+
+        return duplicates;
     }
 };
 
